@@ -11,12 +11,20 @@ config_version=5
 [application]
 
 config/name="HECKBUILDER"
+run/main_scene="uid://dgw7uprlwg5p1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://+ ART/": "red",
+"res://+ SCENES/": "red"
+}
 
 [rendering]
 
