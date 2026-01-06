@@ -1,8 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgw7uprlwg5p1"]
+[gd_scene load_steps=13 format=3 uid="uid://dgw7uprlwg5p1"]
 
-[ext_resource type="Script" uid="uid://dhf02aket7r70" path="res://+ SCENES/menu.gd" id="1_t5wkq"]
-[ext_resource type="Texture2D" uid="uid://duf187gpfsl7y" path="res://+ ART/Wallpaper.png" id="2_7wnkj"]
-[ext_resource type="Texture2D" uid="uid://g5ce7g7am6e4" path="res://+ ART/Snímek obrazovky 2025-12-15 v 19.18.49.png" id="3_d351h"]
+[ext_resource type="Script" uid="uid://dhf02aket7r70" path="res://+ SCRIPTS/menu.gd" id="1_t5wkq"]
+[ext_resource type="Texture2D" uid="uid://duf187gpfsl7y" path="res://+ FILES/Wallpaper.png" id="2_7wnkj"]
+[ext_resource type="Texture2D" uid="uid://g5ce7g7am6e4" path="res://+ FILES/uno-reverse.png" id="3_d351h"]
+[ext_resource type="Texture2D" uid="uid://c7l57go2tu3l5" path="res://+ FILES/start-card.png" id="4_7wnkj"]
+
+[sub_resource type="Animation" id="Animation_2t2he"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(201, 391)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_7h0as"]
 resource_name = "move"
@@ -30,33 +58,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.2617994]
-}
-
-[sub_resource type="Animation" id="Animation_2t2he"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(201, 391)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_t5wkq"]
@@ -94,34 +95,6 @@ _data = {
 &"return": SubResource("Animation_t5wkq")
 }
 
-[sub_resource type="Animation" id="Animation_7wnkj"]
-resource_name = "move"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.6, 0.6), Vector2(0.85, 0.85)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.17453292]
-}
-
 [sub_resource type="Animation" id="Animation_d351h"]
 length = 0.001
 tracks/0/type = "value"
@@ -149,12 +122,40 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_7wnkj"]
+resource_name = "move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.85, 0.85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.3490658503988659]
+}
+
 [sub_resource type="Animation" id="Animation_x6m74"]
 resource_name = "return"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -174,7 +175,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.17453292, 0.0]
+"values": [-0.3490658503988659, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dtcv5"]
@@ -206,14 +207,14 @@ expand_mode = 3
 [node name="settings" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.20217368
-anchor_top = 0.7143458
-anchor_right = 0.43517366
-anchor_bottom = 1.3163458
-offset_left = -31.904083
-offset_top = -71.89609
-offset_right = -32.32007
-offset_bottom = -71.99158
+anchor_left = 0.17400001
+anchor_top = 0.60300004
+anchor_right = 0.314
+anchor_bottom = 0.96500003
+offset_left = 0.5519867
+offset_top = 0.25598145
+offset_right = 107.27197
+offset_bottom = 155.68048
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_d351h")
 metadata/_edit_use_anchors_ = true
@@ -225,24 +226,31 @@ libraries = {
 
 [node name="start" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -195.0
-offset_right = 134.0
-offset_bottom = 195.0
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.19900002
+anchor_right = 0.523
+anchor_bottom = 0.56
+offset_left = -1.3680115
+offset_top = 0.04798889
+offset_right = -6.4959717
+offset_bottom = 11.119995
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("3_d351h")
+texture_normal = ExtResource("4_7wnkj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="start"]
 libraries = {
 &"": SubResource("AnimationLibrary_dtcv5")
 }
+
+[node name="another_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="another_button"]
 
 [connection signal="mouse_entered" from="settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="mouse_exited" from="settings" to="." method="_on_settings_mouse_exited"]

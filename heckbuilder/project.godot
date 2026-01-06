@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="HECKBUILDER"
-run/main_scene="uid://dgw7uprlwg5p1"
+run/main_scene="uid://d04hj0d2o1vga"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -22,8 +26,9 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://+ ART/": "red",
-"res://+ SCENES/": "red"
+"res://+ FILES/": "red",
+"res://+ SCENES/": "red",
+"res://+ SCRIPTS/": "red"
 }
 
 [rendering]

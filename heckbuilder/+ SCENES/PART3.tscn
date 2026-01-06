@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://dntqrx01v1kgp"]
+
+[ext_resource type="Script" uid="uid://qn8v8p8vtpu4" path="res://part_3.gd" id="1_57aqw"]
+[ext_resource type="FontFile" uid="uid://b1846hc5erjfv" path="res://+ FILES/easvhs.ttf" id="2_0waxm"]
+
+[sub_resource type="Theme" id="Theme_njov2"]
+default_font = ExtResource("2_0waxm")
+
+[sub_resource type="Theme" id="Theme_2au82"]
+default_font = ExtResource("2_0waxm")
+default_font_size = 27
+
+[sub_resource type="Theme" id="Theme_8tn2x"]
+default_font = ExtResource("2_0waxm")
+default_font_size = 17
+
+[sub_resource type="Theme" id="Theme_jevwe"]
+default_font = ExtResource("2_0waxm")
+
+[sub_resource type="Theme" id="Theme_mdsti"]
+default_font = ExtResource("2_0waxm")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57aqw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15307656, 0.15307653, 0.15307653, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 47.0
+offset_right = 1084.0
+offset_bottom = 647.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MenuButton" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "*"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_njov2")
+theme_override_font_sizes/normal_font_size = 40
+text = "
+HECKBUILDER"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2au82")
+text = "PART 1"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_8tn2x")
+theme_override_constants/line_separation = 10
+theme_override_constants/paragraph_separation = 20
+bbcode_enabled = true
+text = "[i] (Come here, my child.)  [/i]
+If you had even managed to verbalise any concerns, the Star remains ignorant.
+Your soul nears the red star with an ever increasing speed. From this distance, you can make out the details twisting and burning on the surface; like snakes or vines, the fire seems to be closing in on itself from every corner. Despite the fact that you can't move, sensations must still be within your control as you notice the air around the light is oddly… cold.
+[i] (You must be the one. You have to be.) [/i]"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_jevwe")
+text = "\"What? What do you mean?\""
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_mdsti")
+text = "The star is oddly… familiar?"
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "="
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/Button2" to="." method="_on_button2_pressed"]
